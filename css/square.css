@@ -86,7 +86,10 @@ body{
 	position: relative;
 	top:-550px;
 }
-@media screen and (max-width:980px){
+@media screen and (max-width:414px){
+    .content{
+        height: 736px;
+    }
     .heart-shape{  
         width: 80px;  
         height: 80px;
@@ -131,7 +134,10 @@ body{
         top:-230px;
     }
 }
-@media screen and (max-width:568px){
+@media screen and (max-width:400px){
+    .content{
+        height: 568px;
+    }
     .heart-shape{  
         width: 60px;  
         height: 60px;
