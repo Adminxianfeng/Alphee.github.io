@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>First test</title>
+	<style>
+	h1{color:red; font-family:"Microsoft YaHei";}
+	</style>
+	</head>
+	<body>
+	<h1>小于加油！！你是最胖的！！</h1>
+	<img class="img6" src="psb.jpg">
+	<div id="score"></div>
+	</body>
+	<script type="text/javascript">
+		var xiaoyu = {
+			name: "xiaoyu",
+			school: "sanjiang",
+            age: 24,
+            height: 1.8
+			};
+		var score = new Map(
+			[['xiaoyu',100],
+			['xiaozhang',90],
+			['beitou',80],
+			['haige',70]]
+		);
+        var m = document.getElementById('score');
+        m.innerHTML = score.get('xiaoyu');
+	</script>
+</html>
