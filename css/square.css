@@ -1,0 +1,88 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0.5)));
+}
+.heart-shape{  
+    position: relative; 
+    width: 200px;  
+    height: 200px;
+    margin:200px auto;  
+    -webkit-transform: rotate(45deg);  
+    -moz-transform: rotate(45deg);  
+    -ms-transform: rotate(45deg);  
+    -o-transform: rotate(45deg);  
+    transform: rotate(45deg);
+    border-radius: 5px;  
+    background-color: rgba(255,204,204, 1); 
+}
+.txt{
+	position: relative;
+	z-index: 999;
+	width: 220px;
+	line-height: 30px;
+    top:50px;
+    right: 40px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Microsoft YaHei","SimSun";
+    color: red;
+	-webkit-transform: rotate(-45deg);  
+    -moz-transform: rotate(-45deg);  
+    -ms-transform: rotate(-45deg);  
+    -o-transform: rotate(-45deg); 
+}
+.heart-shape .txt .ld{
+    padding-right: 5px;
+    background-image: -webkit-gradient(linear, left center, right center, from(rgba(176, 31, 184, 1)), to(rgba(255, 89, 76, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.heart-shape:before,  
+.heart-shape:after{  
+    position: absolute;  
+    width: 200px;  
+    height: 200px;  
+    content: '';  
+    -webkit-border-radius: 50%;  
+    -moz-border-radius: 50%;  
+    -o-border-radius: 50%;  
+    border-radius: 50%;  
+    background-color: rgba(255,204,204, 1);  
+}
+.heart-shape:before{  
+    bottom: 0px;  
+    left: -90px;  
+}  
+.heart-shape:after{  
+    top: -90px;  
+    right: 0px;  
+}
+.ml{
+	width: 300px;
+	height: 400px;
+	float: right;
+	margin-right: 200px;
+    background: url(../images/ml.jpg) no-repeat;
+    background-size:100%;
+	position: relative;
+	top:-150px;
+}
+.ml p{
+    font-size: 50px;
+    color:skyblue;
+    padding-left: 10px; 
+}
+.xf{
+	width: 300px;
+	height: 400px;
+	float: left;
+	margin-left: 200px;
+    background: url(../images/xf.png) no-repeat;
+    background-size:100%;
+	position: relative;
+	top:-550px;
+}
