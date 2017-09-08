@@ -86,3 +86,93 @@ body{
 	position: relative;
 	top:-550px;
 }
+@media screen and (max-width:980px){
+    .heart-shape{  
+        width: 80px;  
+        height: 80px;
+        margin:100px auto;  
+    }
+    .txt{
+        width: 120px;
+        line-height: 10px;
+        top:10px;
+        right: 30px;
+        font-size:10px; 
+    }
+    .heart-shape .txt .ld{
+        padding-right: 5px;
+    }
+    .heart-shape:before,  
+    .heart-shape:after{   
+        width: 80px;  
+        height: 80px;    
+    }
+    .heart-shape:before{   
+        left: -40px;  
+    }  
+    .heart-shape:after{  
+        top: -40px;  
+    }
+    .ml{
+        width: 100px;
+        height: 180px;
+        margin-right: 30px;
+        top:-50px;
+    }
+    .ml p{
+        font-size: 10px;
+        color:skyblue;
+        padding-left: 5px; 
+    }
+    .xf{
+        width: 100px;
+        height: 180px;
+        margin-left: 30px;
+        top:-230px;
+    }
+}
+@media screen and (max-width:568px){
+    .heart-shape{  
+        width: 60px;  
+        height: 60px;
+        margin:100px auto;  
+    }
+    .txt{
+        width: 120px;
+        line-height: 10px;
+        top:0px;
+        right: 30px;
+        font-size:8px; 
+    }
+    .heart-shape .txt .ld{
+        padding-right: 1px;
+    }
+    .heart-shape:before,  
+    .heart-shape:after{   
+        width: 60px;  
+        height: 60px;    
+    }
+    .heart-shape:before{   
+        left: -30px;  
+    }  
+    .heart-shape:after{  
+        top: -30px;  
+    }
+    .ml{
+        width: 60px;
+        height: 100px;
+        margin-right: 30px;
+        top:-30px;
+    }
+    .ml p{
+        font-size: 10px;
+        color:skyblue;
+        padding-left: 5px; 
+    }
+    .xf{
+        width: 60px;
+        height: 100px;
+        margin-left: 30px;
+        top:-190px;
+    }
+}
