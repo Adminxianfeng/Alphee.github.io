@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>XF的个人网站</title>
+	<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon"/>
+	<!-- <link rel="stylesheet" href="css/scrollpage.css" /> -->
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+		body,html{
+		    width: 100%;
+		    height: 100%;
+		}
+		#jq-box li{
+		    width: 100%;
+		    height: 100%;
+		}
+		#jq-box{
+		    width: 100%;
+		    height: 100%;
+		}
+		.menu {
+			width: 110px;
+			height: 30px;
+			border-radius: 10px;
+			position: fixed;
+			top:20px;
+			left: 10px;
+			background-image: url(images/bg.jpg);
+			padding-left: 10px;
+		}
+		.menu-banner {
+            width: 100px;
+            height: 30px;
+        }
+		.menu-banner ul{
+			display: none;
+		}
+        .menu-banner a {
+            display: block;
+            width: 100px;
+            height: 30px;
+            color: #000;
+            font: 600 14px/30px "微软雅黑";
+            text-align: center;
+            background-image: url(images/libg.jpg);
+        }
+        .midtxt{
+		    text-align: center;
+		    font: 700 20px/50px "SimSun";
+		}
+		.constellation{
+		    width: 260px;
+		    height: 150px;
+		    margin: 50px auto;
+		    border: 1px solid #ccc;
+		}
+		.constellation .xz-title{
+		    font: 700 18px/20px "Simsun";
+		    color: #0873C0;
+		    padding: 10px 0 0 20px;
+		}
+		.xz-title .current-date{
+		    display: block;
+		    float: right;
+		    font-size:16px;
+		    margin-right:20px;
+		}
+		.constellation .xz-detail{
+		    padding: 10px 0 0 20px;
+		}
+		.xz-dd .xz-pic{
+		    width: 50px;
+		    height: 50px;
+		    background-color: blue;
+		    background: url(images/constellation.png) no-repeat;
+		}
+		.xz-dd .icon{
+		    padding: 5px 0 0 60px;
+		}
+		.star-layout{
+		    padding-top:6px;
+		}
+		.star-layout p{
+		    float: left;
+		}
+		.star-pic{
+		    width: 80px;
+		    height: 13px;
+		    background: url(images/star.png) no-repeat;
+		    position: relative;
+		}
+		.starPic{
+		    width: 0px;
+		    height: 13px;
+		    background: url(images/star.png) no-repeat left bottom;
+		    position: absolute;
+		    top:0;
+		    left: 0;
+		}
+		.content{
+		    padding: 20px 0 0 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+        <div class="menu-banner">
+        	<a href="#">求你拉拉我ba~</a>
+            <ul>
+                <li><a href="javascript:;">demo1</a></li>
+                <li><a href="javascript:;">demo2</a></li>
+                <li><a href="javascript:;">demo3</a></li>
+                <li><a href="javascript:;">demo4</a></li>
+            </ul>
+        </div>       
+    </div>
+	<ul id="jq-box">
+		<li>
+			<p class="midtxt">效果1</p>
+			<div class="constellation">
+				<div class="xz-title ">星座运势<span class="current-date" id="cdt"></span></div>
+				<div class="xz-detail">
+					<div class="xz-dd clearfix">
+						<div class="xz-pic fl" id="xzPic"></div>
+						<div class="icon">
+							<select class="xz-sele" id="sele">
+								<option value="0">白羊座(03.21-04.19)</option>
+								<option value="1">金牛座(04.20-05.20)</option>
+								<option value="2">双子座(05.21-06.21)</option>
+								<option value="3">巨蟹座(06.22-07.22)</option>
+								<option value="4">狮子座(07.23-08.22)</option>
+								<option value="5">处女座(08.23-09.22)</option>
+								<option value="6">天秤座(09.23-10.23)</option>
+								<option value="7">天蝎座(10.24-11.22)</option>
+								<option value="8">射手座(11.23-12.21)</option>
+								<option value="9">摩羯座(12.22-01.19)</option>
+								<option value="10">水瓶座(01.20-02.18)</option>
+								<option value="11">双鱼座(02.19-03.20)</option>
+							</select>
+							<div class="star-layout">
+									<p>今日运势：</p>
+									<div class="star-pic fl">
+										<div class="starPic" id="stPic"></div>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<p id="xzContent"></p>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="midtxt">效果2</p>
+		</li>
+		<li>
+			<p class="midtxt">效果3</p>
+		</li>
+		<li>
+			<p class="midtxt">效果4</p>
+		</li>
+	</ul>
+</body>
+</html>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.scrollTo.js"></script>
+<script>
+		$(document).ready(function(){
+			//下拉列表部分
+			$(".menu-banner").hover(function () {
+				$(this).children("ul").stop().slideToggle();
+			});
+			//点击滚动部分
+			$(".menu-banner").children("ul").children("li").
+			each(function(index,elem){
+				$(elem).on("click",function(){
+					$.scrollTo("#jq-box li:eq("+index+")",1500);
+				});
+			});
+
+			//星座运势部分
+			var starArr = [9,7,5,3,3,8,7,6,9,10,8,6];
+			var xzctArr = ["白羊座运势","金牛座运势","双子座运势","巨蟹座运势","狮子座运势","处女座运势","天秤座运势","天蝎座运势","射手座运势","摩羯座运势","水平座运势","双鱼座运势"]; 
+			var myDt = new Date();
+			var currentDt = myDt.toLocaleDateString();
+			var m = myDt.getMonth() + 1;       //获取当前月份(0-11,0代表1月)
+			var d = myDt.getDate();		 //获取当前日(1-31)
+			var opIndex = getAstro(m,d);
+			$("#cdt").html(currentDt);
+			$("option")[opIndex].selected = true;
+			$("#xzContent").html(xzctArr[opIndex]);
+			$("#stPic").css("width",starArr[opIndex]*8+"px");
+			$(".icon").on("change","#sele",function(){
+				$("#xzPic").css("background-position","0 -"+$(this).val()*50+"px");
+				$("#stPic").css("width",8*starArr[$(this).val()]+"px");
+				$("#xzContent").html(xzctArr[$(this).val()]);
+			});
+			//根据日期得到星座索引号
+			function getAstro(m,d){    
+				//return m-(d<"102123444543".charAt(m-1)- -19);
+				    var arr=[20,21,22,23,23,23,24,23,22,20,19,21];
+				    if(m>=4){
+						return m-(d<arr[m-1]?4:3);
+					}
+				    else
+						return m+12-(d<arr[m-1]?4:3);
+			}
+		});
+</script>

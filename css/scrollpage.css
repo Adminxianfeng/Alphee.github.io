@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/*京东轮播图部分*/
+.slider{
+    overflow: hidden;
+    position: relative;
+}
+.slider ul li{
+    display: none;
+}
+ul li.current{
+    display: block;
+}
+.content{
+    width: 730px;
+    height: 454px;
+    margin: 20px auto;
+    position: relative;
+}
+.circle{
+    position: absolute;
+    left: 50%;
+    margin-left:-100px;
+    bottom: 10px;
+}
+span{
+    float: left;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: pink;
+    font: 500 18px/20px "SimSun";
+    color: #050505;
+}
+.current-sp{
+    background-color: purple;
+}
+.arrow{
+    display: none;
+}
+.arrow-l {
+    left: 0;
+    background: url(../images/icon2.png) no-repeat 0px 17px;
+}
+.arrow-r {
+    right: 0;
+    background: url(../images/icon1.png) no-repeat 0px 17px;
+}
+ .arrow-l, .arrow-r {
+    position: absolute;
+    width: 28px;
+    height: 62px;
+    top: 50%;
+    margin-top: -31px;
+    color: #fff;
+    font: 500 18px/62px "SimSun";
+    text-align: center;
+    background-size:100%;
+    background-color: rgba(0,0,0,.2);
+}
+.arrow-l:hover,.arrow-r:hover {
+    background-color: rgba(0,0,0,.4);
+    color: #fff;
+}
+/*导航按钮部分*/
+body,html{
+    width: 100%;
+    height: 100%;
+}
+#ulBox li{
+    width: 100%;
+    height: 100%;
+}
+#ulBox{
+    width: 100%;
+    height: 100%;
+}
+#olBox{
+    position: fixed;
+    top: 0;
+    left: 30px;
+}
+#olBox li{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 50%;
+    font: 700 8px/40px "SimSun";
+    cursor: pointer;
+}
+#olBox li:hover{
+    background-color: pink;
+}
+.midtxt{
+    text-align: center;
+    font: 700 20px/50px "SimSun";
+}
+.currentxiaoguo{
+    background-color: pink;
+}
+/*手风琴部分*/
+.sfq-box{
+    width: 1150px;
+    height: 400px;
+    margin:50px auto;
+    border:1px solid red;
+    overflow: hidden;
+}
+#ulBox li .sfq-box li {
+    width: 240px;
+    height: 400px;
+    float: left;
+}
+.sfq-box ul {
+    width: 1300px;
+}
+/*小于无缝滚动部分*/
+.outer-div{
+    width: 300px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: url(../images/bgyu.jpg) no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+}
+.screen{
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.screen .yuul{
+    position: absolute;
+    height: 400px;
+    width: 600%;
+}
+.screen #yuul li{
+    width: 300px;
+    height: 400px;
+    float: left;
+}
+.screen li img{
+    width: 300px;
+    height: 400px;
+}
+/*旋转木马部分*/
+.xzwrap{
+    width:1000px;
+    margin:50px auto;
+}
+.xzslide {
+    height:500px;
+    position: relative;
+}
+.xzslide li{
+    position: absolute;
+    left:200px;
+    top:0;
+}
+.xzslide li img{
+    width:100%;
+}
+#ulBox li ul .xzarrow{
+    opacity: 0;
+    position: relative;
+    z-index:100;
+}
+.prev,.next{
+    width:76px;
+    height:112px;
+    position: absolute;
+    top:50%;
+    margin-top:-56px;
+    background: url(../images/prev.png) no-repeat;
+    z-index: 99;
+}
+.next{
+    right:0;
+    background-image: url(../images/next.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

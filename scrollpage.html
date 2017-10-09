@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>XF的个人网站</title>
+	<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="css/scrollpage.css" />
+	<link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+	<ol id="olBox">
+		<li class="currentxiaoguo">demo1</li>
+		<li>demo2</li>
+		<li>demo3</li>
+		<li>demo4</li>
+	</ol>
+	<ul id="ulBox">
+		<li>
+			<p class="midtxt">效果1</p>
+			<div class="content" id="scroll">
+				<div class="slider">
+					<ul id="ul">
+						<li class="current"><img src="images/22.jpg" alt="" /></li>
+						<li><img src="images/11.jpg" alt="" /></li>
+						<li><img src="images/33.jpg" alt="" /></li>
+						<li><img src="images/44.jpg" alt="" /></li>
+						<li><img src="images/55.jpg" alt="" /></li>
+						<li><img src="images/66.jpg" alt="" /></li>
+					</ul>
+					<div class="arrow" id="arrow">
+			            <a href="javascript:;" id="arrowl" class="arrow-l"></a>
+			            <a href="javascript:;" id="arrowr" class="arrow-r"></a>
+		        	</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="midtxt">效果2</p>
+			<div class="sfq-box" id="sfqBox">
+			    <ul>
+			        <li></li>
+			        <li></li>
+			        <li></li>
+			        <li></li>
+			        <li></li>
+			    </ul>
+			</div>
+		</li>
+		<li>
+			<p class="midtxt">效果3</p>
+			<div class="outer-div" id="outerdiv">
+				<div class="screen" id="yudiv">
+					<ul id="yuul" class="yuul">
+						<li><img src="images/yu1.jpg" alt="" /></li>
+						<li><img src="images/yu2.jpg" alt="" /></li>
+						<li><img src="images/yu3.jpg" alt="" /></li>
+						<li><img src="images/yu4.jpg" alt="" /></li>
+						<li><img src="images/yu5.jpg" alt="" /></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="midtxt">效果4</p>
+			<div class="xzwrap" id="xzwrap">
+			   <div class="xzslide" id="xzslide">
+			       <ul>
+			           <li><a href="javascript:;"><img src="images/slidepic1.jpg" alt=""/></a></li>
+			           <li><a href="javascript:;"><img src="images/slidepic2.jpg" alt=""/></a></li>
+			           <li><a href="javascript:;"><img src="images/slidepic3.jpg" alt=""/></a></li>
+			           <li><a href="javascript:;"><img src="images/slidepic4.jpg" alt=""/></a></li>
+			           <li><a href="javascript:;"><img src="images/slidepic5.jpg" alt=""/></a></li>
+			       </ul>
+			       <div class="xzarrow" id="xzarrow">
+			           <a href="javascript:;" class="prev"></a>
+			           <a href="javascript:;" class="next"></a>
+			       </div>
+			   </div>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/scrollpage.js"></script>
+<script>
+	window.onload = function(){
+		var txtColor = ["blue","skyblue","yellowgreen","orange"];
+		var xglis = $("#olBox").getElementsByTagName("li");
+		var ullis = $("#ulBox").children;
+		var leader = 0,target = 0,timer = null;
+		for(var i =0 ; i < ullis.length ; i++){
+			xglis[i].style.color = txtColor[i];
+			//xglis[i].index = i;
+			//闭包
+			xglis[i].onclick = function(num){
+				return function(){
+					for(var j = 0 ; j < xglis.length ; j++){
+						xglis[j].className = "";
+					}
+					xglis[num].className = "currentxiaoguo";
+					clearInterval(timer);
+					target = ullis[num].offsetTop;
+					//_this = this;
+					timer = setInterval(function(){
+						leader = leader + (target - leader)/10;
+						leader = leader < ullis[num].offsetTop ? Math.ceil(leader) : Math.floor(leader);
+						window.scrollTo(0,leader);
+						if(leader == ullis[num].offsetTop){
+							clearInterval(timer);
+						}
+					},30);
+				}
+			}(i);
+		}
+		wfgd();
+		xzdemo();
+	}	
+</script>
