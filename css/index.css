@@ -171,6 +171,11 @@
 .self-intro dd {
     font:14px/20px "microsoft yahei";
 }
+.cet dd {
+    padding-top: 10px;
+    cursor: pointer;
+    font:16px/30px "microsoft yahei";
+}
 .exp-detail p,
 .tra-detail li,
 .intro-detail p {
@@ -211,32 +216,17 @@
 .img-self {
     width: 100px;   
 }
-/*@-webkit-keyframes glow {
-    0% {
-        -webkit-box-shadow: 0 0 12px rgba(72, 106, 170, 0.5);
-        border-color: rgba(160, 179, 214, 0.5);         
-    }
-    100% {
-        -webkit-box-shadow: 0 0 12px rgba(72, 106, 170, 1.0), 0 0 18px rgba(0, 140, 255, 1.0);
-        border-color: rgba(160, 179, 214, 1.0); 
-    }
-}
-.img-self:hover {
-    filter: alpha(opacity=0);
-    filter:grayscale(100%);
-    background-color:#f0f3f9;
-    -webkit-animation-name: glow;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -webkit-animation-timing-function: ease-in-out; 
-}*/
 /*简历底部*/
 .resume-content .footer-left {
     width: 500px;
 }
 .resume-content .footer-right {
     width: 250px;
+}
+.resume-footer .per-work dd{
+    font-size: 16px;
+    text-decoration: underline;
+    padding-top: 10px;
 }
 .resume-footer .footer-bottom {
     height: 60px;
@@ -248,4 +238,29 @@
 }
 .resume-footer .footer-bottom span{
     font: 700 30px/50px "Times New Roman";
+}
+.cet-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: none;
+}
+.cet-img img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.close-img{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 60px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.close-img:hover{
+    opacity: 1;
 }

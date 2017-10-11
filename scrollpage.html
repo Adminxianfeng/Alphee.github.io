@@ -16,7 +16,7 @@
 	</ol>
 	<ul id="ulBox">
 		<li>
-			<p class="midtxt">效果1</p>
+			<p class="midtxt">仿JD首页轮播图</p>
 			<div class="content" id="scroll">
 				<div class="slider">
 					<ul id="ul">
@@ -35,7 +35,7 @@
 			</div>
 		</li>
 		<li>
-			<p class="midtxt">效果2</p>
+			<p class="midtxt">手风琴效果</p>
 			<div class="sfq-box" id="sfqBox">
 			    <ul>
 			        <li></li>
@@ -47,7 +47,7 @@
 			</div>
 		</li>
 		<li>
-			<p class="midtxt">效果3</p>
+			<p class="midtxt">无缝滚动效果</p>
 			<div class="outer-div" id="outerdiv">
 				<div class="screen" id="yudiv">
 					<ul id="yuul" class="yuul">
@@ -61,7 +61,7 @@
 			</div>
 		</li>
 		<li>
-			<p class="midtxt">效果4</p>
+			<p class="midtxt">旋转木马效果</p>
 			<div class="xzwrap" id="xzwrap">
 			   <div class="xzslide" id="xzslide">
 			       <ul>
@@ -91,7 +91,6 @@
 		var leader = 0,target = 0,timer = null;
 		for(var i =0 ; i < ullis.length ; i++){
 			xglis[i].style.color = txtColor[i];
-			//xglis[i].index = i;
 			//闭包
 			xglis[i].onclick = function(num){
 				return function(){
@@ -101,7 +100,6 @@
 					xglis[num].className = "currentxiaoguo";
 					clearInterval(timer);
 					target = ullis[num].offsetTop;
-					//_this = this;
 					timer = setInterval(function(){
 						leader = leader + (target - leader)/10;
 						leader = leader < ullis[num].offsetTop ? Math.ceil(leader) : Math.floor(leader);

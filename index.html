@@ -12,7 +12,7 @@
         <meta name="Description" content="冼峰的个人网站" />
 		<link rel="icon" href="http://ixm8.com/favicon.ico" />
         <link rel="stylesheet" href="http://ixm8.com/css/base.css" /> 
-        <link rel="stylesheet" href="http://ixm8.com/css/index.css" />      
+        <link rel="stylesheet" href="http://ixm8.com/css/index.css" />    
     </head>
     <body>
     	<!--头部开始  -->
@@ -115,9 +115,9 @@
 			    				<dd>锐聘学院</dd>
 			    				<dd>培训内容：
 			    					<ul>
-			    						<li class="tra-content"><i><s></s></i>编程语言：Java</li>
-			    						<li class="tra-content"><i><s></s></i>网页：html、jsp</li>
-			    						<li class="tra-content"><i><s></s></i>数据库：Oracle、sqlServer</li>
+			    						<li class="tra-content"><i><s></s></i>后端：Java</li>
+			    						<li class="tra-content"><i><s></s></i>前台：Jsp</li>
+			    						<li class="tra-content"><i><s></s></i>DB：Oracle、sqlServer</li>
 			    						<li class="tra-content"><i><s></s></i>三大框架：Spring、Struts、Mybatis</li>
 			    					</ul>
 			    				</dd>
@@ -138,11 +138,11 @@
     						<dd>
     							<p>
 									<i><s></s></i>
-									熟悉W3C标准、ES6、Div+Css布局、Js、DOM、Ajax，了解Http协议。
+									熟悉W3C标准、ES6、Div+Css布局、Js、DOM、BOM、Ajax，熟练使用jquery，了解Http协议、H5、C3。
 								</p>
 								<p>
 									<i><s></s></i>
-									会使用Git、Svn、Webstorm、Sublime，简单操作FW、PS等自己切图。
+									会使用Git、svn、Webstorm、Sublime，简单操作FW、PS。
 								</p>
 								<p>
 									<i><s></s></i>
@@ -183,17 +183,17 @@
     		<div class="footer-left fl">
     			<div class="edu clearfix">
     				<div class="item fl"></div>
-    				<div class="edu-detail fl">
+    				<div class="edu-detail per-work fl">
     					<dl>
 	    					<dt>个人作品 Individual Works</dt>
 		    				<dd>
-		    					<a href="http://ixm8.com/jumppage.html">原生JS之轮播图系列</a>
+		    					<a href="jumppage.html">原生JS之轮播图系列</a>
 		    				</dd>
 		    				<dd>
-		    					<a href="http://ixm8.com/jquery.html">jquery的使用</a>
+		    					<a href="demo-jquery.html">小案例之jquery使用</a>
 		    				</dd>
 		    				<dd>
-		    					<a href="#">case3</a>
+		    					<a href="note/note.html">H5小应用之备忘录</a>
 		    				</dd>
 		    				<dd>
 		    					<a href="#">case4</a>
@@ -205,9 +205,12 @@
     		<div class="footer-right fr">
     			<div class="cet clearfix">
     				<div class="item fl"></div>
-    				<div class="cet-detail fl">
+    				<div class="cet-detail fl" id="cet">
     					<dl>
     						<dt>技能证书及其他</dt>
+    						<dd>计算机二级C</dd>
+    						<dd>大学英语六级</dd>
+    						<dd>学士学位证</dd>
     					</dl>
     				</div>
     			</div>
@@ -215,6 +218,51 @@
     		<div class="footer-bottom fl"><span>Choose Me&nbsp;&nbsp;&nbsp;Choose Win<span></div>
     	</div>
     	<!-- 底部结束 -->
+
+    	<!-- 证件弹出层开始 -->
+    	<div class="cet-img" id="div-hide">
+    		<img src="" alt="" id="cet-img-js">
+    		<span class="close-img" id="close-js">×</span>
+    	</div>
+    	<!-- 证件弹出层结束 -->
+
+    	<!-- 背景音乐 -->
+    	<audio controls="controls" hidden="hidden" autoplay="autoplay" loop="loop">
+			<source src="audio/bgmusic.mp3" type="audio/mpeg" />
+		</audio>
     </body>
-    
 </html>
+<script src="http://ixm8.com/js/jquery-1.11.1.min.js"></script>
+<script>
+	$(function(){
+		var json = [
+		{
+			width:'800',
+			height:'600',
+			src:'images/gradeC.png'
+		},
+		{
+			width:'403',
+			height:'600',
+			src:'images/gradeCet6.png'
+		},
+		{
+			width:'416',
+			height:'600',
+			src:'images/certificate.png'
+		}];
+		var d = $("#cet dd");
+		var img = $('#cet-img-js');
+		d.each(function(index,value){
+			$(this).on('click',function(){
+				$('#div-hide').css('top',$(document).scrollTop()+'px').show();
+				$('body').css('overflow','hidden');
+				img.attr('src',json[index].src).css({'margin-left':-json[index].width/2+'px','margin-top':-json[index].height/2+'px'});
+			});
+		});
+		$('#close-js').on('click',function(){
+			$('#div-hide').hide();
+			$('body').css('overflow','auto');
+		});
+	});
+</script>

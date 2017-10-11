@@ -30,7 +30,6 @@ for(var j = 0 ; j < cirCild.length ; j++){
 			lis[k].className = "";
 			cirCild[k].className = "";
 		}
-		//alert(that);
 		that.className = "current-sp";
 		lis[that.index].className = "current";
 		lis[that.index].style.display = "block";
@@ -143,7 +142,6 @@ function wfgd(){
 	timer = setInterval(play,20);
 	function play(){
 		num--;
-		//console.log(num);
 		num = num <= -1500 ? 0 : num ;
 		yuul.style.left = num + "px";
 	}

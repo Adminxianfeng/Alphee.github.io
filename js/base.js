@@ -14,14 +14,6 @@ function $(str) {
             return document.getElementsByTagName(str);
     }
 }
-// 求数组平均值
-function avg(array){
-	var len = array.length;
-	var sum = 0;
-	for(var i = 0 ;i < len ; i++){
-		sum += array[i];
-	}
-	return sum / len;}
 // Tab栏切换
 function tab(obj){
 	var target = $(obj);
@@ -59,14 +51,6 @@ function getClass(classname){
     	}
     }
     return arr;}
-// 隐藏函数
-function hide(id){
-	$(id).style.display = "none";
-}
-// 显示函数
-function show(id){
-	$(id).style.display = "block";
-}
 // 封装自己的scroll函数 scroll().top = scrollTop,scroll().left = scrollLeft
 function scroll() {
     if(window.pageYOffset != null)  //  ie9+其他浏览器
@@ -111,22 +95,6 @@ function client() {
         height: document.body.clientHeight
     }
 }
-//封装匀速运动函数
-/*function animate(obj,target,step) {
-    //步长可能为负值，负值往后退
-    var speed = obj.offsetLeft < target ? step : -step;
-    obj.timer = setInterval(function(){
-        //当前位置与目标位置的差值
-        var result = target - obj.offsetLeft;
-        obj.style.left = obj.offsetLeft + speed +"px";
-        //当差值小于步长时清除定时器，并且把没走完的一点距离补上 直接走到目标位置
-        if(Math.abs(result) <= Math.abs(speed)){
-            clearInterval(obj.timer);
-            obj.style.left = target +"px";
-        }
-    },30);
-}*/
-
 //封装动画函数
 function animate(obj,json,fn) {  
     clearInterval(obj.timer);
@@ -134,18 +102,15 @@ function animate(obj,json,fn) {
         var flag = true;  // 用来判断是否停止定时器
         for(var attr in json){
             //开始遍历 json
-           // console.log(attr);
             var current = 0;
             if(attr == "opacity")
             {
                 current = Math.round(parseInt(getStyle(obj,attr)*100)) || 0;
-                //console.log(current);
             }
             else
             {
                 current = parseInt(getStyle(obj,attr));
             }
-           // console.log(current);
             var step = ( json[attr] - current) / 10;
             step = step > 0 ? Math.ceil(step) : Math.floor(step);
             //判断透明度
