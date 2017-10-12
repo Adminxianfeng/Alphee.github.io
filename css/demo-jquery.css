@@ -282,7 +282,7 @@ img {
     width: 24px;
     height: 20px;
     display:inline-block;
-    background:url(../img/icon.png) no-repeat -24px -782px;
+    background:url(../images/icon.png) no-repeat -24px -782px;
     margin: 0 5px;
     cursor: pointer;
     text-indent: -20em;
@@ -296,7 +296,7 @@ img {
     position: absolute;
     top: 50%;
     margin-top: -35px;
-    background:url(../img/icon.png) no-repeat 6px top;
+    background:url(../images/icon.png) no-repeat 6px top;
     width: 30px;
     height: 35px;
     opacity: 0.8;

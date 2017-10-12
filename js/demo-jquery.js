@@ -80,6 +80,74 @@ $(document).ready(function(){
           $(".icon-mouse").css("display","none");
        }
     });
+
+    var js_slider = $("#js_slider");
+    var slider_main_block = $("#slider_main_block");
+    var block_child = slider_main_block.children();
+    var slider_ctrl = $("#slider_ctrl");
+    //创建span
+    block_child.each(function(index,value){
+        var $span = $("<span></span>");
+        $span.addClass('slider-ctrl-con')
+             .insertBefore('#slider_ctrl>span:eq(1)');
+    })
+
+    var scWidth = js_slider.width();
+    //图片1在当前位置 其他图片在右边
+    $("#slider_main_block > div:gt(0)").css('left',scWidth+"px");
+
+    var iNow = 0;
+    var $spans = slider_ctrl.children();
+    $spans.eq(1).addClass('current');
+    $spans.each(function(index,value){
+        $(value).on('click',function(){
+            if($(this).attr('class') == 'slider-ctrl-prev'){
+                block_child.eq(iNow).animate({left: scWidth+"px"},500);
+                --iNow < 0 ?  iNow = block_child.length - 1 : iNow;
+                block_child.eq(iNow).css('left',-scWidth+"px");
+                block_child.eq(iNow).animate({left: 0},500);
+                setSquare();
+            }else if($(this).attr('class') == 'slider-ctrl-next'){
+                autoplay();
+            }else{
+                var $that = $(this).index() - 1;
+                if($that > iNow){
+                    block_child.eq(iNow).animate({left: -scWidth+"px"},500);
+                    block_child.eq($that).css('left',scWidth+"px");
+                }
+                else if($that < iNow){
+                    block_child.eq(iNow).animate({left: scWidth+"px"},500);
+                    block_child.eq($that).css('left',-scWidth+"px");
+                }
+                iNow = $that;
+                block_child.eq(iNow).animate({left: 0},500);
+                setSquare();
+            }
+        });
+    });
+    //  控制span样式
+    function setSquare() {
+        $spans.removeClass('current').eq(iNow + 1).addClass('current');
+    }
+    function autoplay(){
+        block_child.eq(iNow).animate({left: -scWidth+"px"},500);
+        ++iNow > block_child.length - 1 ?  iNow = 0 : iNow;
+        block_child.eq(iNow).css('left',scWidth+"px");
+        block_child.eq(iNow).animate({left: 0},500);
+        setSquare();
+    }
+    var timer = null;
+    timer = setInterval(autoplay,2000);
+
+    js_slider.on({
+        'mouseenter':function(){
+            clearInterval(timer);
+        },
+        'mouseleave':function(){
+            clearInterval(timer);
+            timer = setInterval(autoplay,2000);
+        }
+    });
 });
 
 //好友列表数据
@@ -172,8 +240,6 @@ function bindAtSomeClick() {
         .children("span").click(function () {
              $("#msgTxt").val($("#msgTxt").val() + $(this).text());
         });
-    console.log(createDom.css("left") + "  " + createDom.css("top"));
-
 
     $("a.atSome").hover(function () {       
 
@@ -204,70 +270,3 @@ function bindSendBtnHover () {
         $(this).removeClass("sendBtnHover");
     });
 }
-var js_slider = $("#js_slider");  // 获取最大盒子
-var slider_main_block = $("#slider_main_block");
-var block_child = slider_main_block.children();
-var slider_ctrl = $("#slider_ctrl");  // 获得 控制span 的 父盒子
-//创建span
-block_child.each(function(index,value){
-    var $span = $("<span></span>");
-    $span.addClass('slider-ctrl-con')
-         .insertBefore('#slider_ctrl>span:eq(1)');
-})
-
-var scWidth = js_slider.width();
-//图片1在当前位置 其他图片在右边
-$("#slider_main_block > div:gt(0)").css('left',scWidth+"px");
-
-var iNow = 0;
-var $spans = slider_ctrl.children();
-$spans.eq(1).addClass('current');
-$spans.each(function(index,value){
-    $(value).on('click',function(){
-        if($(this).attr('class') == 'slider-ctrl-prev'){
-            block_child.eq(iNow).animate({left: scWidth+"px"},500);
-            --iNow < 0 ?  iNow = block_child.length - 1 : iNow;
-            block_child.eq(iNow).css('left',-scWidth+"px");
-            block_child.eq(iNow).animate({left: 0},500);
-            setSquare();
-        }else if($(this).attr('class') == 'slider-ctrl-next'){
-            autoplay();
-        }else{
-            var $that = $(this).index() - 1;
-            if($that > iNow){
-                block_child.eq(iNow).animate({left: -scWidth+"px"},500);
-                block_child.eq($that).css('left',scWidth+"px");
-            }
-            else if($that < iNow){
-                block_child.eq(iNow).animate({left: scWidth+"px"},500);
-                block_child.eq($that).css('left',-scWidth+"px");
-            }
-            iNow = $that;
-            block_child.eq(iNow).animate({left: 0},500);
-            setSquare();
-        }
-    });
-});
-//  控制span样式
-function setSquare() {
-    $spans.removeClass('current').eq(iNow + 1).addClass('current');
-}
-function autoplay(){
-    block_child.eq(iNow).animate({left: -scWidth+"px"},500);
-    ++iNow > block_child.length - 1 ?  iNow = 0 : iNow;
-    block_child.eq(iNow).css('left',scWidth+"px");
-    block_child.eq(iNow).animate({left: 0},500);
-    setSquare();
-}
-var timer = null;
-timer = setInterval(autoplay,2000);
-
-js_slider.on({
-    'mouseenter':function(){
-        clearInterval(timer);
-    },
-    'mouseleave':function(){
-        clearInterval(timer);
-        timer = setInterval(autoplay,2000);
-    }
-});
