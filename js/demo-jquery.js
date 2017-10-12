@@ -1,3 +1,87 @@
+$(document).ready(function(){
+    //下拉列表部分
+    $(".menu-banner").hover(function () {
+        $(this).children("ul").stop().slideToggle();
+    });
+    //点击滚动部分
+    $(".menu-banner").children("ul").children("li").
+    each(function(index,elem){
+        $(elem).on("click",function(){
+            $.scrollTo("#jq-box>li:eq("+index+")",1500);
+        });
+    });
+
+    //星座运势部分
+    var starArr = [9,7,5,3,3,8,7,6,9,10,8,6];
+    var xzctArr = ["白羊座运势","金牛座运势","双子座运势","巨蟹座运势","狮子座运势","处女座运势","天秤座运势","天蝎座运势","射手座运势","摩羯座运势","水平座运势","双鱼座运势"]; 
+    var myDt = new Date();
+    var currentDt = myDt.toLocaleDateString();
+    var m = myDt.getMonth() + 1; 
+    var d = myDt.getDate();
+    var opIndex = getAstro(m,d);
+    $("#cdt").html(currentDt);
+    $("option")[opIndex].selected = true;
+    $("#xzContent").html(xzctArr[opIndex]);
+    $("#stPic").css("width",starArr[opIndex]*8+"px");
+    $(".icon").on("change","#sele",function(){
+        $("#xzPic").css("background-position","0 -"+$(this).val()*50+"px");
+        $("#stPic").css("width",8*starArr[$(this).val()]+"px");
+        $("#xzContent").html(xzctArr[$(this).val()]);
+    });
+    //根据日期得到星座索引号
+    function getAstro(m,d){    
+            var arr=[20,21,22,23,23,23,24,23,22,20,19,21];
+            if(m>=4){
+                return m-(d<arr[m-1]?4:3);
+            }
+            else
+                return m+12-(d<arr[m-1]?4:3);
+    }
+    //星级评价
+    var wjx_none = '☆',wjx_sel = '★';
+    var msgTxt = ['看来您真的很不满意~','两颗星也太少了吧~','再考虑下吧，辛苦了~','感谢您的评价，我们再接再厉！','哇，太棒了，期待下次光临！'];
+    $(".comment li").on({
+      mouseenter:function(){
+      $(this).text(wjx_sel)
+             .prevAll()
+             .text(wjx_sel)
+             .end()
+             .nextAll()
+             .text(wjx_none);},
+      click:function(){
+      $(this).text(wjx_sel)
+             .addClass("clicked")
+             .prevAll()
+             .text(wjx_sel)
+             .end()
+             .nextAll()
+             .text(wjx_none);
+      $(this).siblings()
+             .removeClass("clicked")
+      $('.star-msg').text(msgTxt[$(this).index()])},
+      mouseleave:function(){
+      $(".comment li").text(wjx_none);
+      $(".clicked").text(wjx_sel)
+                   .prevAll()
+                   .text(wjx_sel)
+                   .end()
+                   .nextAll()
+                   .text(wjx_none);
+      }});
+
+    //鼠标跟随效果
+    $(document).on({mousemove: function (e) {
+        $(".icon-mouse").offset({
+            "top": e.pageY-$(".icon-mouse").height()/2,
+            "left": e.pageX-$(".icon-mouse").width()/2
+        }).css("display","block")
+      },
+       mouseleave:function(){
+          $(".icon-mouse").css("display","none");
+       }
+    });
+});
+
 //好友列表数据
 var friendsList = ['小鱼', '小张', '背头', '阿茆','小海'];
 
@@ -120,3 +204,70 @@ function bindSendBtnHover () {
         $(this).removeClass("sendBtnHover");
     });
 }
+var js_slider = $("#js_slider");  // 获取最大盒子
+var slider_main_block = $("#slider_main_block");
+var block_child = slider_main_block.children();
+var slider_ctrl = $("#slider_ctrl");  // 获得 控制span 的 父盒子
+//创建span
+block_child.each(function(index,value){
+    var $span = $("<span></span>");
+    $span.addClass('slider-ctrl-con')
+         .insertBefore('#slider_ctrl>span:eq(1)');
+})
+
+var scWidth = js_slider.width();
+//图片1在当前位置 其他图片在右边
+$("#slider_main_block > div:gt(0)").css('left',scWidth+"px");
+
+var iNow = 0;
+var $spans = slider_ctrl.children();
+$spans.eq(1).addClass('current');
+$spans.each(function(index,value){
+    $(value).on('click',function(){
+        if($(this).attr('class') == 'slider-ctrl-prev'){
+            block_child.eq(iNow).animate({left: scWidth+"px"},500);
+            --iNow < 0 ?  iNow = block_child.length - 1 : iNow;
+            block_child.eq(iNow).css('left',-scWidth+"px");
+            block_child.eq(iNow).animate({left: 0},500);
+            setSquare();
+        }else if($(this).attr('class') == 'slider-ctrl-next'){
+            autoplay();
+        }else{
+            var $that = $(this).index() - 1;
+            if($that > iNow){
+                block_child.eq(iNow).animate({left: -scWidth+"px"},500);
+                block_child.eq($that).css('left',scWidth+"px");
+            }
+            else if($that < iNow){
+                block_child.eq(iNow).animate({left: scWidth+"px"},500);
+                block_child.eq($that).css('left',-scWidth+"px");
+            }
+            iNow = $that;
+            block_child.eq(iNow).animate({left: 0},500);
+            setSquare();
+        }
+    });
+});
+//  控制span样式
+function setSquare() {
+    $spans.removeClass('current').eq(iNow + 1).addClass('current');
+}
+function autoplay(){
+    block_child.eq(iNow).animate({left: -scWidth+"px"},500);
+    ++iNow > block_child.length - 1 ?  iNow = 0 : iNow;
+    block_child.eq(iNow).css('left',scWidth+"px");
+    block_child.eq(iNow).animate({left: 0},500);
+    setSquare();
+}
+var timer = null;
+timer = setInterval(autoplay,2000);
+
+js_slider.on({
+    'mouseenter':function(){
+        clearInterval(timer);
+    },
+    'mouseleave':function(){
+        clearInterval(timer);
+        timer = setInterval(autoplay,2000);
+    }
+});
