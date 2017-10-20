@@ -13,8 +13,8 @@
 	var demo = document.getElementById("demo");
     var count = 5;
     var speed = 1000;
-    setTimeout(goIndexPage,speed);  //  1秒钟之后去执行  goIndexPage这个函数
-    function goIndexPage() {
+    setTimeout(goScrollPage,speed);  //  1秒钟之后去执行  goIndexPage这个函数
+    function goScrollPage() {
         count--;
         demo.innerHTML = "<a href='http://ixm8.com/scrollpage.html'>别着急，<span>"+count+"</span>秒钟之后跳转页面</br>如果着急，就点我吧</a>";
         if(count <= 0)
@@ -23,7 +23,7 @@
         }
         else
         {
-            setTimeout(arguments.callee,speed);  //  递归调用  自己调用自己
+            setTimeout(arguments.callee,speed);  //  递归调用
         }
     }
 </script>

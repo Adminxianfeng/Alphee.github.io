@@ -95,6 +95,15 @@ $(document).ready(function(){
     var scWidth = js_slider.width();
     //图片1在当前位置 其他图片在右边
     $("#slider_main_block > div:gt(0)").css('left',scWidth+"px");
+    $("#js_slider").on({
+        'mouseenter':function(){
+            $('.slider-ctrl-prev').show();
+            $('.slider-ctrl-next').show();
+    },
+        'mouseleave':function(){
+            $('.slider-ctrl-prev').hide();
+            $('.slider-ctrl-next').hide();
+    }});
 
     var iNow = 0;
     var $spans = slider_ctrl.children();

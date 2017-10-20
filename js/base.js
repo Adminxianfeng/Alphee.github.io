@@ -14,24 +14,6 @@ function $(str) {
             return document.getElementsByTagName(str);
     }
 }
-// Tab栏切换
-function tab(obj){
-	var target = $(obj);
-	var spans = target.getElementsByTagName("span");
-	var lis = target.getElementsByTagName("li");
-	for(var i = 0 ;i < spans.length ; i++){
-		spans[i].index = i;//获取tab栏对应的索引号
-		spans[i].onmouseover = function(){
-			for(var j = 0 ; j < spans.length ; j++){
-				//清除所有tab以及对应模块样式
-				this.className = "";
-				lis[this.index].className = "";
-			}
-			//添加当前鼠标滑过的tab以及对应模块的样式
-			this.className = "current";
-			lis[this.index].className = "show";
-		}
-	}}
 // getElementsByClassName
 function getClass(classname){
 	//浏览器兼容时
@@ -51,50 +33,6 @@ function getClass(classname){
     	}
     }
     return arr;}
-// 封装自己的scroll函数 scroll().top = scrollTop,scroll().left = scrollLeft
-function scroll() {
-    if(window.pageYOffset != null)  //  ie9+其他浏览器
-    {
-        return {
-            left: window.pageXOffset,
-            top: window.pageYOffset
-        }
-    }
-    else if(document.compatMode == "CSS1Compat")  // 声明了 DTD
-      // 检测是不是怪异模式的浏览器 -- 就是没有 声明<!DOCTYPE html>
-    {
-        return {
-            left: document.documentElement.scrollLeft,
-            top: document.documentElement.scrollTop
-        }
-    }
-    return { //  剩下的肯定是怪异模式的
-        left: document.body.scrollLeft,
-        top: document.body.scrollTop
-    }
-}
-// 封装自己的client函数 client().width = clientWisth,client().height = clientHeight
-function client() {
-    if(window.innerWidth != null)  //  ie9+其他浏览器
-    {
-        return {
-            width: window.innerWidth,
-            height: window.innerHeight
-        }
-    }
-    else if(document.compatMode === "CSS1Compat")  // 声明了 DTD 标准浏览器
-      // 检测是不是怪异模式的浏览器 -- 就是没有 声明<!DOCTYPE html>
-    {
-        return {
-            width: document.documentElement.clientWidth,
-            height: document.documentElement.clientHeight
-        }
-    }
-    return { //  剩下的肯定是怪异模式的
-        width: document.body.clientWidth,
-        height: document.body.clientHeight
-    }
-}
 //封装动画函数
 function animate(obj,json,fn) {  
     clearInterval(obj.timer);

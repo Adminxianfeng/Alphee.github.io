@@ -301,6 +301,7 @@ img {
     height: 35px;
     opacity: 0.8;
     cursor: pointer;
+    display: none;
 }
 .slider-ctrl-prev {
     left: 0;

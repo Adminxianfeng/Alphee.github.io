@@ -56,7 +56,6 @@ $("#arrowr").onclick = function(){
 $("#arrowl").onclick = function(){
 	for(var i = lis.length - 1 ; i > 0 ; i--){
 		var x = lis[i].getAttribute('class');
-		//alert(x);
 		lis[i].style.display = "none";
 		lis[i].className = "";
 		spans[i].className = "";
@@ -73,7 +72,6 @@ var timer = null;
 timer = setInterval(fn,1000);
 
 function fn(){
-	//clearInterval(timer);
 	for(var i = 0 ; i < lis.length; i++){
 		var x = lis[i].getAttribute('class');
 		lis[i].style.display = "none";
