@@ -79,39 +79,39 @@
 			</div>
 		</li>
 	</ul>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/scrollpage.js"></script>
+	<script>
+		window.onload = function(){
+			var txtColor = ["blue","skyblue","yellowgreen","orange"];
+			var xglis = $("#olBox").getElementsByTagName("li");
+			var ullis = $("#ulBox").children;
+			var leader = 0,target = 0,timer = null;
+			for(var i =0 ; i < ullis.length ; i++){
+				xglis[i].style.color = txtColor[i];
+				//闭包
+				xglis[i].onclick = function(num){
+					return function(){
+						for(var j = 0 ; j < xglis.length ; j++){
+							xglis[j].className = "";
+						}
+						xglis[num].className = "currentxiaoguo";
+						clearInterval(timer);
+						target = ullis[num].offsetTop;
+						timer = setInterval(function(){
+							leader = leader + (target - leader)/10;
+							leader = leader < ullis[num].offsetTop ? Math.ceil(leader) : Math.floor(leader);
+							window.scrollTo(0,leader);
+							if(leader == ullis[num].offsetTop){
+								clearInterval(timer);
+							}
+						},30);
+					}
+				}(i);
+			}
+			wfgd();
+			xzdemo();
+		}	
+	</script>
 </body>
 </html>
-<script type="text/javascript" src="js/base.js"></script>
-<script type="text/javascript" src="js/scrollpage.js"></script>
-<script>
-	window.onload = function(){
-		var txtColor = ["blue","skyblue","yellowgreen","orange"];
-		var xglis = $("#olBox").getElementsByTagName("li");
-		var ullis = $("#ulBox").children;
-		var leader = 0,target = 0,timer = null;
-		for(var i =0 ; i < ullis.length ; i++){
-			xglis[i].style.color = txtColor[i];
-			//闭包
-			xglis[i].onclick = function(num){
-				return function(){
-					for(var j = 0 ; j < xglis.length ; j++){
-						xglis[j].className = "";
-					}
-					xglis[num].className = "currentxiaoguo";
-					clearInterval(timer);
-					target = ullis[num].offsetTop;
-					timer = setInterval(function(){
-						leader = leader + (target - leader)/10;
-						leader = leader < ullis[num].offsetTop ? Math.ceil(leader) : Math.floor(leader);
-						window.scrollTo(0,leader);
-						if(leader == ullis[num].offsetTop){
-							clearInterval(timer);
-						}
-					},30);
-				}
-			}(i);
-		}
-		wfgd();
-		xzdemo();
-	}	
-</script>

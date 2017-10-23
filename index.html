@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
-<html lang="zh-CN">
     <head>
     	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     	<!--- The site is designed by XF 11/2015 -->
@@ -232,39 +232,39 @@
     	<!-- <audio controls="controls" hidden="hidden" autoplay="autoplay" loop="loop">
 			<source src="audio/bgmusic.mp3" type="audio/mpeg" />
 		</audio> -->
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			$(function(){
+				var json = [
+				{
+					width:'800',
+					height:'600',
+					src:'images/gradeC.png'
+				},
+				{
+					width:'403',
+					height:'600',
+					src:'images/gradeCet6.png'
+				},
+				{
+					width:'416',
+					height:'600',
+					src:'images/certificate.png'
+				}];
+				var d = $("#cet dd");
+				var img = $('#cet-img-js');
+				d.each(function(index,value){
+					$(this).on('click',function(){
+						$('#div-hide').css('top',$(document).scrollTop()+'px').show();
+						$('body').css('overflow','hidden');
+						img.attr('src',json[index].src).css({'margin-left':-json[index].width/2+'px','margin-top':-json[index].height/2+'px'});
+					});
+				});
+				$('#close-js').on('click',function(){
+					$('#div-hide').hide();
+					$('body').css('overflow','auto');
+				});
+			});
+		</script>
     </body>
 </html>
-<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-	$(function(){
-		var json = [
-		{
-			width:'800',
-			height:'600',
-			src:'images/gradeC.png'
-		},
-		{
-			width:'403',
-			height:'600',
-			src:'images/gradeCet6.png'
-		},
-		{
-			width:'416',
-			height:'600',
-			src:'images/certificate.png'
-		}];
-		var d = $("#cet dd");
-		var img = $('#cet-img-js');
-		d.each(function(index,value){
-			$(this).on('click',function(){
-				$('#div-hide').css('top',$(document).scrollTop()+'px').show();
-				$('body').css('overflow','hidden');
-				img.attr('src',json[index].src).css({'margin-left':-json[index].width/2+'px','margin-top':-json[index].height/2+'px'});
-			});
-		});
-		$('#close-js').on('click',function(){
-			$('#div-hide').hide();
-			$('body').css('overflow','auto');
-		});
-	});
-</script>
