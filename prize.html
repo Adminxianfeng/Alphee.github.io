@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul li{
+                list-style: none;
+            }
+            #lis{
+                height: 568px;
+                width: 426px;
+                border: 10px solid #2386ff;
+                margin: 30px auto;
+            }
+            #lis li{
+                height: 140px;
+                width: 140px;
+                border: 1px solid #eee;
+                float: left;
+                opacity: 0.5;
+            }
+            .bnt{
+                height: 30px;
+                width: 200px;
+                color: #ccc;
+                margin: 20px auto;
+            }
+            .bnt input:hover{
+                cursor: pointer;
+            }
+            .bnt input:active{
+                background:#B5B5B5;
+            }
+            .bnt input{
+                height: 30px;
+                width: 200px;
+                border-radius: 20px;
+                border: none;
+                outline:none;
+                
+            }
+            #lis .active{
+                opacity: 1;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="bnt" id="bnt">
+            <input type="button" name="" id="val" value="开始抽奖" />
+
+        </div>
+        
+        <ul id="lis">
+            <li style="background: url(images/1.png);" title="蓝牙耳机"></li>
+            <li style="background: url(images/2.png);" title="苹果平板"></li>
+            <li style="background: url(images/3.png);" title="耐克运动鞋"></li>
+            <li style="background: url(images/4.png);" title="谢谢参与"></li>
+            <li style="background: url(images/5.png);" title="手机"></li>
+            <li style="background: url(images/6.png);" title="阿迪达斯"></li>
+            <li style="background: url(images/7.png);" title="蓝牙耳机"></li>
+            <li style="background: url(images/8.png);" title="洋娃娃"></li>
+            <li style="background: url(images/9.png);" title="谢谢参与"></li>
+            <li style="background: url(images/10.png);" title="公仔"></li>
+            <li style="background: url(images/11.png);" title="mp4"></li>
+            <li style="background: url(images/12.png);" title="诺基亚"></li>
+
+        </ul>
+        <script type="text/javascript">
+        var oul = document.getElementById('lis')
+        var ali = oul.getElementsByTagName('li');
+        var bnt = document.getElementById('bnt');
+        var va = document.getElementById('val')
+        var num=0;
+        var timer=null;//存放定时器的容器
+        var nam=0;
+        var arr=['蓝牙耳机','苹果平板','耐克运动鞋','谢谢参与','手机','阿迪达斯','蓝牙耳机','洋娃娃','谢谢参与',
+        '公仔','mp4','诺基亚',];
+        var count=0;//定义抽奖次数
+//设置定时器 setInterval(干什么事情,时间)每隔100时间做这个事情   
+       bnt.onclick=function(){
+        clearInterval(timer);
+       start();
+       }
+
+       function start(){
+        timer=setInterval(function(){
+            for(var i=0;i<ali.length;i++){
+            ali[i].className='';            
+            ali[i].test=arr[i];     
+            }
+            num = Math.floor(Math.random()*12);//获取0-1之间中的随机数 在乘12 然后去掉小数
+            ali[num].className='active';
+            nam+=10;
+
+            if(nam>=900){//抽奖的时间限制，当nam自增到900就停止
+                clearInterval(timer);//清除定时器
+                alert("恭喜你获得："+ali[num].test);
+                if(count>0){
+        va.value="再来一次";
+       }
+            }
+                                
+        },100)
+        nam=0;
+        count++;
+        }
+        </script>       
+    </body>
+</html>

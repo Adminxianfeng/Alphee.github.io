@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>Our Love Story</title>
@@ -10,9 +10,9 @@
         }
     </style>
     <link href="style/default.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/garden.js"></script>
+    <script type="text/javascript" src="./js/functions.js"></script>
 </head>
 
 <body>
@@ -20,9 +20,9 @@
         <div id="content">
             <div id="code">
                 <span class="comments">/**</span><br />
-                <span class="space"/><span class="comments">* We are both Nanjing University of Information Science & Technology,</span><br />
-                <span class="space"/><span class="comments">* so I write some code to show my love to you.</span><br />
-                <span class="space"/><span class="comments">*/</span><br />
+                <span class="space"></span><span class="comments">* We are both Nanjing University of Information Science & Technology,</span><br />
+                <span class="space"></span><span class="comments">* so I write some code to show my love to you.</span><br />
+                <span class="space"></span><span class="comments">*/</span><br />
                 Boy i = <span class="keyword">new</span> Boy(<span class="string">"xianfeng"</span>);<br />
                 Girl u = <span class="keyword">new</span> Girl(<span class="string">"maoling"</span>);<br />
                 <span class="comments">// September 1, 2012, The first time I met you. </span><br />
@@ -40,46 +40,36 @@
                 <span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
                 <span class="keyword">boolean</span> isAccept = <span class="keyword">false</span>;<br />
                 <span class="keyword">while</span> (isAccept) {<br />
-                <span class="placeholder"/>i.waitFor(u);<br />
-                <span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
-                <span class="placeholder"/><span class="comments">// and you should forgot the unhappy things that happended before.</span><br />
-                <span class="placeholder"/>isAccept = u.thinkOver();<br />
+                <span class="placeholder"></span>i.waitFor(u);<br />
+                <span class="placeholder"></span><span class="comments">// I think it is an important decision</span><br />
+                <span class="placeholder"></span><span class="comments">// and you should forgot the unhappy things that happended before.</span><br />
+                <span class="placeholder"></span>isAccept = u.thinkOver();<br />
                 }<br />
                 <span class="comments">// After a please sound of accept, we will live happily ever after.</span><br />
                 u.accept(i);<br />
                 i.liveHappilyWith(u);<br />
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-3712320065678109";
-/* lovead */
-google_ad_slot = "0650322805";
-google_ad_width = 320;
-google_ad_height = 50;
-//-->
-</script>
             </div>
+            <script type="text/javascript">
+                google_ad_client = "ca-pub-3712320065678109";
+                /* lovead */
+                google_ad_slot = "0650322805";
+                google_ad_width = 320;
+                google_ad_height = 50;
+                //-->
+            </script>
+            <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
             <div id="loveHeart">
                 <canvas id="garden"></canvas>
                 <div id="words">
                     <div id="messages">
-<center>
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-3712320065678109";
-/* lovead */
-google_ad_slot = "0650322805";
-google_ad_width = 320;
-google_ad_height = 50;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</center>
                         maoling, I will have fallen in love with you for
                         <div id="elapseClock" style="display:none"></div>
-                        <a href='#' id="accept">click me if accept me</a>
+                        <a href='#' id="accept" style="text-align: center;">click me if accept me</a>
                     </div>
                     <div id="loveu">
-                        Love u forever and ever.<br/>
+                        Love u forever and ever.<br />
                         <div class="signature">- xianfeng</div>
                     </div>
                 </div>
@@ -89,11 +79,11 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
     <script type="text/javascript">
         var offsetX = $("#loveHeart").width() / 2;
         var offsetY = $("#loveHeart").height() / 2 - 55;
-        
+
         if (!document.createElement('canvas').getContext) {
             var msg = document.createElement("div");
             msg.id = "errorMsg";
-            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
             document.body.appendChild(msg);
             $("#code").css("display", "none")
             $("#").css("bottom", "10px");
@@ -103,8 +93,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                 adjustWordsPosition();
                 startHeartAnimation();
             }, 10000);
-            
-            $("#accept").click(function(){
+
+            $("#accept").click(function () {
                 $(this).hide();
                 $("#elapseClock").show();
                 var together = new Date();
@@ -117,10 +107,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             $("#code").typewriter();
         }
     </script>
-	<script type="text/javascript"> 
-		(function() { var s = "_" + Math.random().toString(36).slice(2); document.write('<div style="" id="' + s + '"></div>'); 
-	(window.slotbydup = window.slotbydup || []).push({ id: "u4923786", container:  s }); })(); </script>
-	<script type="text/javascript" src="https://cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" >
-	</script>
+    <script type="text/javascript">
+        (function () {
+            var s = "_" + Math.random().toString(36).slice(2); document.write('<div style="" id="' + s + '"></div>');
+            (window.slotbydup = window.slotbydup || []).push({ id: "u4923786", container: s });
+        })();</script>
+    <script type="text/javascript" src="https://cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer">
+    </script>
 </body>
 </html>
