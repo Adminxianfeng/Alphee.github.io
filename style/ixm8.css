@@ -294,3 +294,10 @@ div.modal-body {
     text-align: right;
 }
 .ixm8-year, .ixm8-month, .ixm8-day, .ixm8-hour, .ixm8-minute, .ixm8-second { }
+.ixm8-mobile {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: steelblue;
+    font-weight: 700;
+}

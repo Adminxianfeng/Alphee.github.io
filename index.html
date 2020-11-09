@@ -359,7 +359,7 @@
     </div>
 </div>
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="ixm8Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="ixm8Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -385,7 +385,16 @@
     <source src="./music/bslr.mp3" type="audio/mpeg" />
 </audio>
 <script>
-    $(function() {
+    $(function () {
+
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+                $("body").html("<div class='ixm8-mobile'>用电脑看，谢谢。(｀・ω・´)</div>");
+            }
+        }
+        browserRedirect(); 
+
         $('#ixm8Modal').modal('show');
         setInterval(function () {
             timeElapse(new Date(2012,10,11));
