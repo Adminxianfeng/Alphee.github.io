@@ -32,7 +32,7 @@ function writeContent(init, activeIndex) {
         document.getElementById(blinks[activeIndex]).style.display = 'inline';
     }
     if (charIndex <= stringLength) {
-        timer1 = setTimeout('writeContent(false,' + activeIndex + ')', 80);
+        timer1 = setTimeout('writeContent(false,' + activeIndex + ')', 93);
     } else {
         blinkSpan(activeIndex);
     }
