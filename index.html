@@ -3,116 +3,453 @@
 <head>
     <title>Our Love Story</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <style type="text/css">
-        @font-face {
-            font-family: digit;
-            src: url('digital-7_mono.ttf') format("truetype");
-        }
-    </style>
-    <link href="style/default.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="./js/jquery.js"></script>
-    <script type="text/javascript" src="./js/garden.js"></script>
-    <script type="text/javascript" src="./js/functions.js"></script>
+    <link href="./style/ixm8.css" type="text/css" rel="stylesheet">
+    <link href="./style/swiper.min.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <!-- 下雪-->
+    <script type="text/javascript" src="./js/snowstorm.js"></script>
+    <!-- 打字机效果-->
+    <script id="ixmText" type="text/javascript" src="./js/text.js"></script>
+    <!--轮播-->
+    <script type="text/javascript" src="./js/swiper.min.js"></script>
+    <link rel="stylesheet" href="./style/bootstrap.min.css">
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div id="mainDiv">
-        <div id="content">
-            <div id="code">
-                <span class="comments">/**</span><br />
-                <span class="space"></span><span class="comments">* We are both Nanjing University of Information Science & Technology,</span><br />
-                <span class="space"></span><span class="comments">* so I write some code to show my love to you.</span><br />
-                <span class="space"></span><span class="comments">*/</span><br />
-                Boy i = <span class="keyword">new</span> Boy(<span class="string">"xianfeng"</span>);<br />
-                Girl u = <span class="keyword">new</span> Girl(<span class="string">"maoling"</span>);<br />
-                <span class="comments">// September 1, 2012, The first time I met you. </span><br />
-                <span class="comments">// October 11, 2012, I told you I love you. </span><br />
-                i.love(u);<br />
-                <span class="comments">// but..., what you said that meaning we are still good friends.</span><br />
-                u.sayOtherthing();<br />
-                <span class="comments">// Since then, I ask you for the reason.</span><br />
-                <span class="keyword">var</span> reason=i.ask(u);<br />
-                <span class="comments">// you say we were not understand enough for each other .</span><br />
-                $("body").append(reason);<br />
-                <span class="comments">// You say that it is too quickily to turn our relation of lover.</span><br />
-                <span class="comments">// And take care of u and our love.</span><br />
-                i.takeCareOf(u);<br />
-                <span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
-                <span class="keyword">boolean</span> isAccept = <span class="keyword">false</span>;<br />
-                <span class="keyword">while</span> (isAccept) {<br />
-                <span class="placeholder"></span>i.waitFor(u);<br />
-                <span class="placeholder"></span><span class="comments">// I think it is an important decision</span><br />
-                <span class="placeholder"></span><span class="comments">// and you should forgot the unhappy things that happended before.</span><br />
-                <span class="placeholder"></span>isAccept = u.thinkOver();<br />
-                }<br />
-                <span class="comments">// After a please sound of accept, we will live happily ever after.</span><br />
-                u.accept(i);<br />
-                i.liveHappilyWith(u);<br />
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="50000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201201.jpg" alt="初遇" />
+                </div>
             </div>
-            <script type="text/javascript">
-                google_ad_client = "ca-pub-3712320065678109";
-                /* lovead */
-                google_ad_slot = "0650322805";
-                google_ad_width = 320;
-                google_ad_height = 50;
-                //-->
-            </script>
-            <script type="text/javascript"
-                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script>
-            <div id="loveHeart">
-                <canvas id="garden"></canvas>
-                <div id="words">
-                    <div id="messages">
-                        maoling, I will have fallen in love with you for
-                        <div id="elapseClock" style="display:none"></div>
-                        <a href='#' id="accept" style="text-align: center;">click me if accept me</a>
+            <div class="col-xs-8 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相遇
+                        </div>
                     </div>
-                    <div id="loveu">
-                        Love u forever and ever.<br />
-                        <div class="signature">- xianfeng</div>
+                    <div id="myContent1">
+                        <span id="blink1" style="display: none;">_</span></div>
+                    <div id="contentToWrite1" style="display: none">
+                        还记得那年9月 <br>
+                        操场上，新生军训动员大会 <br>
+                        你跟着宿舍姐妹谈笑着走来 <br>
+                        长马尾、齐刘海，黑黑的脸蛋却笑的灿烂<br>
+                        这是我们第一次见面<br>
+                        应该说是我第一次见到你<br>
+                        这个爱笑的黑姑娘真有意思<br>
+                        坏坏的男孩按奈不住他的好奇心<br>
+                        两个宿舍小伙子小姑娘进行了第一次约饭<br>
+                        缘分就是这么奇妙<br>
+                        同为宝中校友三年却不知<br>
+                        欢声笑语中一起碰杯<br>
+                        不曾想一晃就是8年<br>
+                        <br>
+                        -----------------------2012年<br>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="46000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201301.jpg" alt="相识" />
+                </div>
+            </div>
+            <div class="col-xs-5 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相识
+                        </div>
+                    </div>
+                    <div id="myContent2">
+                        <span id="blink2" style="display: none;">_</span></div>
+                    <div id="contentToWrite2" style="display: none">
+                        我们一起回家 <br>
+                        东站太远，我们溜达在万达 <br>
+                        南京的夜色很美 <br>
+                        有你的夜晚更美<br>
+                        我们一起返校<br>
+                        东西再少你也会说拿不下<br>
+                        我们一起吃饭<br>
+                        从此开始记住你爱吃的每一样<br>
+                        我们一起逛街<br>
+                        让我对陪女人逛街有了深刻体会<br>
+                        我们一起学习<br>
+                        贪玩的我<br>
+                        除了LOVE U看不进一个单词<br>
+                        <br>
+                        -----------------------2013年<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 padding-left-right0">
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201302.jpg" alt="相识" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="42000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201401.jpg" alt="相知" />
+                </div>
+            </div>
+            <div class="col-xs-5 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相知
+                        </div>
+                    </div>
+                    <div id="myContent3">
+                        <span id="blink3" style="display: none;">_</span></div>
+                    <div id="contentToWrite3" style="display: none">
+                        我们一起体会第一次坐高铁 <br>
+                        带你认识我的每一个朋友 <br>
+                        大厂、弘阳、夫子庙、玄武湖 <br>
+                        中山陵、明长城、大屠杀纪念馆<br>
+                        鸡鸣寺、新街口<br>
+                        我们走过每个角落<br>
+                        也把每个角落写进我们的记忆<br>
+                        常州、镇江、扬州、杭州<br>
+                        上海、苏州、无锡、兴化<br>
+                        我说过<br>
+                        带着36码大脚的你走遍世界<br>
+                        <br>
+                        -----------------------2014年<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 padding-left-right0">
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201402.jpg" alt="相知" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="60000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201501.jpg" alt="相惜" />
+                </div>
+            </div>
+            <div class="col-xs-5 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相惜
+                        </div>
+                    </div>
+                    <div id="myContent4">
+                        <span id="blink4" style="display: none;">_</span></div>
+                    <div id="contentToWrite4" style="display: none">
+                        曾经那个青涩的小姑娘 <br>
+                        慢慢褪去了一脸的稚气 <br>
+                        我们爱自己 <br>
+                        也更珍惜彼此<br>
+                        我们坐一天的车寻找薰衣草庄园<br>
+                        起一个大早去看动物园<br>
+                        一路向北买你爱吃的大白兔奶糖<br>
+                        南门的精品店逛了一遍又一遍<br>
+                        我们从D2D3<br>
+                        见证了地铁S8的运行<br>
+                        从一起在学校的老电影院<br>
+                        到弘阳的3D MAX<br>
+                        北门的烤鱼南门的烤肉饭<br>
+                        东苑的一鸣中苑的茶叶蛋<br>
+                        故事很多<br>
+                        主角未变<br>
+                        <br>
+                        -----------------------2015年<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 padding-left-right0">
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201502.jpg" alt="相惜" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="52000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201601.jpg" alt="相爱" />
+                </div>
+            </div>
+            <div class="col-xs-5 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相爱
+                        </div>
+                    </div>
+                    <div id="myContent5">
+                        <span id="blink5" style="display: none;">_</span></div>
+                    <div id="contentToWrite5" style="display: none">
+                        回忆很长校园时光又很短 <br>
+                        一转眼我们要毕业了<br>
+                        都说毕业季分手季 <br>
+                        但我们当然不会咯<br>
+                        我们离开校园<br>
+                        我们一起踏入社会<br>
+                        我们离开南京<br>
+                        我们一起来到苏州<br>
+                        我们约定不分离<br>
+                        约定从校服到婚纱<br>
+                        从青丝到白发<br>
+                        你说有我的地方就是家<br>
+                        我说有你的城市才有归属感<br>
+                        <br>
+                        -----------------------2016年<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 padding-left-right0">
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201602.jpg" alt="相爱" />
+                </div>
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201603.jpg" alt="相爱" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="67000">
+                <div class="col-xs-4 padding-left-right0">
+                    <div class="fr section-image">
+                        <img src="./images/ixm8/201701.jpg" alt="相伴" />
+                    </div>
+                </div>
+                <div class="col-xs-5 padding-left-right0 fl">
+                    <div class="section-content">
+                        <!--#Header-->
+                        <div class="header" style="opacity:0.85">
+                            <div class="title">
+                                相伴
+                            </div>
+                        </div>
+                        <div id="myContent6">
+                            <span id="blink6" style="display: none;">_</span></div>
+                        <div id="contentToWrite6" style="display: none">
+                            曾经那个青涩的小姑娘 <br>
+                            慢慢褪去了一脸的稚气 <br>
+                            我们爱自己 <br>
+                            也更珍惜彼此<br>
+                            我们坐一天的车寻找薰衣草庄园<br>
+                            起一个大早去看动物园<br>
+                            一路向北买你爱吃的大白兔奶糖<br>
+                            南门的精品店逛了一遍又一遍<br>
+                            我们从D2D3<br>
+                            见证了地铁S8的运行<br>
+                            从一起在学校的老电影院<br>
+                            到弘阳的3D MAX<br>
+                            北门的烤鱼南门的烤肉饭<br>
+                            东苑的一鸣中苑的茶叶蛋<br>
+                            故事很多<br>
+                            主角未变<br>
+                            <br>
+                            -----------------------2017年<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 padding-left-right0">
+                    <div class="fl section-image">
+                        <img src="./images/ixm8/201702.jpg" alt="相伴" />
+                    </div>
+                </div>
+         </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="67000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201801.jpg" alt="相守" />
+                </div>
+            </div>
+            <div class="col-xs-5 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相守
+                        </div>
+                    </div>
+                    <div id="myContent7">
+                        <span id="blink7" style="display: none;">_</span></div>
+                    <div id="contentToWrite7" style="display: none">
+                        曾经那个青涩的小姑娘 <br>
+                        慢慢褪去了一脸的稚气 <br>
+                        我们爱自己 <br>
+                        也更珍惜彼此<br>
+                        我们坐一天的车寻找薰衣草庄园<br>
+                        起一个大早去看动物园<br>
+                        一路向北买你爱吃的大白兔奶糖<br>
+                        南门的精品店逛了一遍又一遍<br>
+                        我们从D2D3<br>
+                        见证了地铁S8的运行<br>
+                        从一起在学校的老电影院<br>
+                        到弘阳的3D MAX<br>
+                        北门的烤鱼南门的烤肉饭<br>
+                        东苑的一鸣中苑的茶叶蛋<br>
+                        故事很多<br>
+                        主角未变<br>
+                        <br>
+                        -----------------------2018年<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 padding-left-right0">
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201802.jpg" alt="相守" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide ixm-section clearfix" data-swiper-autoplay="67000">
+            <div class="col-xs-4 padding-left-right0">
+                <div class="fr section-image">
+                    <img src="./images/ixm8/201901.jpg" alt="相濡以沫" />
+                </div>
+            </div>
+            <div class="col-xs-5 padding-left-right0 fl">
+                <div class="section-content">
+                    <!--#Header-->
+                    <div class="header" style="opacity:0.85">
+                        <div class="title">
+                            相濡以沫
+                        </div>
+                    </div>
+                    <div id="myContent8">
+                        <span id="blink8" style="display: none;">_</span></div>
+                    <div id="contentToWrite8" style="display: none">
+                        曾经那个青涩的小姑娘 <br>
+                        慢慢褪去了一脸的稚气 <br>
+                        我们爱自己 <br>
+                        也更珍惜彼此<br>
+                        我们坐一天的车寻找薰衣草庄园<br>
+                        起一个大早去看动物园<br>
+                        一路向北买你爱吃的大白兔奶糖<br>
+                        南门的精品店逛了一遍又一遍<br>
+                        我们从D2D3<br>
+                        见证了地铁S8的运行<br>
+                        从一起在学校的老电影院<br>
+                        到弘阳的3D MAX<br>
+                        北门的烤鱼南门的烤肉饭<br>
+                        东苑的一鸣中苑的茶叶蛋<br>
+                        故事很多<br>
+                        主角未变<br>
+                        <br>
+                        -----------------------2015年<br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 padding-left-right0">
+                <div class="fl section-image">
+                    <img src="./images/ixm8/201902.jpg" alt="相濡以沫" />
+                </div>
+            </div>
+        </div>
     </div>
-    <script type="text/javascript">
-        var offsetX = $("#loveHeart").width() / 2;
-        var offsetY = $("#loveHeart").height() / 2 - 55;
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="ixm8Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    茆小姐，你愿意听我们的故事吗？
+                </h4>
+            </div>
+            <div class="modal-body">
+                我们已经在一起<span class="ixm8-year"></span>年<span class="ixm8-month"></span>月<span class="ixm8-day"></span>天<span class="ixm8-hour"></span>时<span class="ixm8-minute"></span>分<span class="ixm8-second"></span>秒啦♥～
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="ixm8Promise1">
+                    YES
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="ixm8Promise2">
+                    I DO
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<audio id="myaudio"controls="controls" hidden="hidden">
+    <source src="./music/bslr.mp3" type="audio/mpeg" />
+</audio>
+<script>
+    $(function() {
+        $('#ixm8Modal').modal('show');
+        setInterval(function () {
+            timeElapse(new Date(2012,10,11));
+        }, 500);
+        
+        $("#ixm8Promise1,#ixm8Promise2").on("click", function () {
+            var music = document.getElementById("myaudio");//获取ID  
+            if (music.paused) { //判读是否播放  
+                music.paused=false;
+                music.play(); //没有就播放 
+            } 
+            writeContent(true, 0);
+            var swiper = new Swiper('.swiper-container', {
+                autoplay: {
+                    delay: 9000,
+                    stopOnLastSlide: true,
+                    disableOnInteraction: false
+                }
+            });
+            swiper.on('slideChangeTransitionEnd', function () {
+                stop();
+                initParam();
+                writeContent(true, swiper.activeIndex);
+            });
+        });
+    });
 
-        if (!document.createElement('canvas').getContext) {
-            var msg = document.createElement("div");
-            msg.id = "errorMsg";
-            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
-            document.body.appendChild(msg);
-            $("#code").css("display", "none")
-            $("#").css("bottom", "10px");
-            document.execCommand("stop");
-        } else {
-            setTimeout(function () {
-                adjustWordsPosition();
-                startHeartAnimation();
-            }, 10000);
-
-            $("#accept").click(function () {
-                $(this).hide();
-                $("#elapseClock").show();
-                var together = new Date();
-                timeElapse(together);
-                setInterval(function () {
-                    timeElapse(together);
-                }, 500);
-            })
-            adjustCodePosition();
-            $("#code").typewriter();
+    function timeElapse(startDate) {
+        var flag = [1, 3, 5, 7, 8, 10, 12, 4, 6, 9, 11, 2];
+        var endDate = new Date();
+        var year = endDate.getFullYear() - startDate.getFullYear();
+        var month = endDate.getMonth() + 1 - startDate.getMonth();
+        var day = endDate.getDate() - startDate.getDate();
+        if (month < 0) {
+            year--;
+            month = endDate.getMonth() + (12 - startDate.getMonth());
         }
-    </script>
-    <script type="text/javascript">
-        (function () {
-            var s = "_" + Math.random().toString(36).slice(2); document.write('<div style="" id="' + s + '"></div>');
-            (window.slotbydup = window.slotbydup || []).push({ id: "u4923786", container: s });
-        })();</script>
-    <script type="text/javascript" src="https://cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer">
-    </script>
+        if (day < 0) {
+            month--;
+            if (month < 0) {
+                year--;
+                month = endDate.getMonth() + 1 + (12 - startDate.getMonth()) + month;
+            }
+            var index = flag.findIndex((temp) => {
+                return temp === startDate.getMonth() + 1;
+            });
+            var monthLength;
+            if (index <= 6) {
+                monthLength = 31;
+            } else if (index > 6 && index <= 10) {
+                monthLength = 30;
+            } else {
+                monthLength = 28;
+            }
+            day = endDate.getDate() + (monthLength - startDate.getDate());
+        }
+        $(".ixm8-year").text(year);
+        $(".ixm8-month").text(month);
+        $(".ixm8-day").text(day);
+        $(".ixm8-hour").text(endDate.getHours());
+        $(".ixm8-minute").text(endDate.getMinutes());
+        $(".ixm8-second").text(endDate.getSeconds());
+    }
+
+</script>
 </body>
 </html>
