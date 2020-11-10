@@ -385,6 +385,9 @@
 <audio id="myaudio"controls="controls" hidden="hidden">
     <source src="./music/bslr.mp3" type="audio/mpeg" />
 </audio>
+<audio id="myaudio1" controls="controls" hidden="hidden">
+    <source src="./music/yzxl.mp3" type="audio/mpeg" />
+</audio>
 <script>
     $(function () {
 
@@ -415,10 +418,6 @@
                 stop();
                 initParam();
                 writeContent(true, swiper.activeIndex);
-                if (swiper.activeIndex == 4) {
-                    console.log(111);
-                    setTimeout("videoPlay()", 1000);
-                }
             });
         });
     });
@@ -461,11 +460,27 @@
     }
 
     function videoPlay() {
-        var music = document.getElementById("myaudio");//获取ID  
+        /*var music = document.getElementById("myaudio");//获取ID  
         if (music.paused) { //判读是否播放  
             music.paused=false;
             music.play(); //没有就播放 
-        } 
+        } */
+        //自动播放下一首
+        var audios = document.getElementsByTagName("audio");
+        for(var i=0;i<audios.length;i++){
+            var current = audios[i];
+            current.addEventListener('ended', function () {
+                var audioArr = document.getElementsByTagName("audio");
+                for(var j=0;j<audioArr.length;j++){
+                    if ( this == audioArr[j] ) {
+                        var nextAudio = audioArr[j + 1];
+                        nextAudio.play();
+                        break;
+                    }
+                }
+            }, false);
+        }
+        audios[0].play();
     }
 </script>
 </body>
