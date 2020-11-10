@@ -1,9 +1,9 @@
 var charIndex = -1;
 var stringLength = 0;
 var inputText = "";
-var contentToWrites = ["contentToWrite1", "contentToWrite2", "contentToWrite3", "contentToWrite4", "contentToWrite5", "contentToWrite6", "contentToWrite7", "contentToWrite8"];
-var myContents = ["myContent1", "myContent2", "myContent3", "myContent4", "myContent5", "myContent6", "myContent7", "myContent8"];
-var blinks = ["blink1", "blink2", "blink3", "blink4", "blink5", "blink6", "blink7", "blink8"];
+var contentToWrites = ["contentToWrite1", "contentToWrite2", "contentToWrite3", "contentToWrite4", "contentToWrite5", "contentToWrite6", "contentToWrite7", "contentToWrite8", "contentToWrite9"];
+var myContents = ["myContent1", "myContent2", "myContent3", "myContent4", "myContent5", "myContent6", "myContent7", "myContent8", "myContent9"];
+var blinks = ["blink1", "blink2", "blink3", "blink4", "blink5", "blink6", "blink7", "blink8", "blink9"];
 var timer1;
 function writeContent(init, activeIndex) {
     if (init) {
