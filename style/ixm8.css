@@ -78,14 +78,91 @@ textarea {
     position: absolute;
     left: 80px;
     top: 80px;
-    text-shadow: 2px 3px 3px #96ce54;
     font-family: Microsoft YaHei;
     font-style: italic;
     font-weight: 500;
     font-size: 20px;
-    color: #0eb83a;
 }
-.contentToWrite{}
+#myContent1 {
+    text-shadow: 2px 3px 3px #d6ecf0;
+    color: #758a99;
+}
+#myContent2 {
+    text-shadow: 2px 3px 3px #faff72;
+    color: #ffa631;
+}
+#myContent3 {
+    text-shadow: 2px 3px 3px #177cb0;
+    color: #3eede7;
+}
+#myContent4 {
+    text-shadow: 2px 3px 3px #cca4e3;
+    color: #b0a4e3;
+}
+#myContent5 {
+    text-shadow: 2px 3px 3px #ffb3a7;
+    color: #db5a6b;
+}
+#myContent6 {
+    text-shadow: 2px 3px 3px #f2be45;
+    color: #eacd76;
+}
+#myContent7 {
+    text-shadow: 2px 3px 3px #9c5333;
+    color: #b35c44;
+}
+#myContent8 {
+    text-shadow: 2px 3px 3px #a1afc9;
+    color: #2e4e7e;
+}
+#myContent9 {
+    text-shadow: 2px 3px 3px #f9906f;
+    color: #ff2121;
+}
+.title {
+    position: absolute;
+    left: 28%;
+    top: 0px;
+    padding: 10px;
+    overflow: hidden;
+}
+.ixm8-xy {
+    text-shadow: 2px 3px 3px #d6ecf0;
+    color: #758a99;
+}
+.ixm8-xs {
+    text-shadow: 2px 3px 3px #faff72;
+    color: #ffa631;
+}
+.ixm8-xz {
+    text-shadow: 2px 3px 3px #177cb0;
+    color: #3eede7;
+}
+.ixm8-xx {
+    text-shadow: 2px 3px 3px #cca4e3;
+    color: #b0a4e3;
+}
+.ixm8-xa {
+    text-shadow: 2px 3px 3px #ffb3a7;
+    color: #db5a6b;
+}
+.ixm8-xb {
+    text-shadow: 2px 3px 3px #f2be45;
+    color: #eacd76;
+}
+.ixm8-xso {
+    text-shadow: 2px 3px 3px #9c5333;
+    color: #b35c44;
+}
+.ixm8-xrym {
+    text-shadow: 2px 3px 3px #a1afc9;
+    color: #2e4e7e;
+}
+.ixm8-yzxl {
+    text-shadow: 2px 3px 3px #f9906f;
+    color: #ff2121;
+}
+.contentToWrite {}
 .blink { }
 #container{
     overflow:hidden;
@@ -95,16 +172,6 @@ textarea {
     width:650px;
     opacity:0;
     filter:alpha(opacity=0.7)
-}
-
-.title{
-    position:absolute;
-    left:28%;
-    top:0px;
-    padding:10px;
-    overflow:hidden;
-    text-shadow: 2px 3px 3px #808080; 
-    color:#0eb83a;
 }
 
 #footer {
