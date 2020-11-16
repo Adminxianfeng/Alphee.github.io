@@ -442,11 +442,12 @@
         function browserRedirect() {
             var sUserAgent = navigator.userAgent.toLowerCase();
             var date = new Date();
+            var date1 = new Date(2020,10,14);
             //console.log(returnCitySN["cip"]+','+returnCitySN["cname"]);
             //if(returnCitySN["cip"] != "222.92.71.78"){
             	if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
                 	$("body").html("<div class='ixm8-mobile'>用电脑看，谢谢。(｀・ω・´)</div>");
-            	} else if (date < new Date(2020,11,14)) {
+            	} else if (date < date1) {
                     $("body").html("<div class='ixm8-mobile'>不准偷看，谢谢。(｀・ω・´)</div>");
             	}
             //}
